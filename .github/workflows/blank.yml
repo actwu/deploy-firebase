@@ -1,0 +1,20 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches: [ "WEBOPL" ] #your repo
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: deploy --non-interactive
+        env:
+          FIREBASE_TOKEN: "${{ secrets.fb }}"
+
