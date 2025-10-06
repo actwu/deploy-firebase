@@ -1,0 +1,24 @@
+{
+"hosting": {
+"site": "actwu",
+"public": "a",
+"ignore": [
+"firebase.json",
+"**/.*",
+"**/node_modules/**"
+],
+"rewrites": [
+{
+"source": "**",
+"destination": "/a.html"
+}
+],
+"errorPages": [
+{
+"code": 404,
+"src": "/**",
+"destination": "/n.html"
+}
+]
+}
+}
